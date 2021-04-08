@@ -1,6 +1,31 @@
 # N-Tuple Network
 
-N-Tuple Network is a set of patterns. Many board games can be split into various patterns, for example Othello and be splitted into 49 2x2 squares, each such square may hold one of 81 (3**4) possible states.
+N-Tuple Network is a set of patterns. Many board games can be splitted into various patterns, for example Othello can be splitted into 49 2x2 squares, each such square may hold one of 81 (3\*\*4) possible states, or some 8x1 rectangles so each rectangle can hold 6561 (3\*\*8) states. Each pattern contains some value, and given position, the sum of all values of patterns may become a board evaluation. N-Tuple Network is function approximator, much like neural network, and it can be trained like neural network.
+
+More on N-Tuples (mostly in reinforcement learning) are in:
+[`Learning to Play Othello
+with N-Tuple Systems`](https://www.semanticscholar.org/paper/Learning-to-Play-Othello-with-N-Tuple-Systems-Lucas/58fc891bd082eafabb78ebca42f35d3e1e494516)
+[`Temporal Difference Learning of N-Tuple Networks
+for the Game 2048`](https://ieeexplore.ieee.org/document/6932907/)
+[`Reinforcement Learning with N-tuples on the Game Connect-4`](https://www.researchgate.net/publication/235219697_Reinforcement_Learning_with_N-tuples_on_the_Game_Connect-4)
+[`Apparently checkers folks discovered N-tuples as well`](http://www.fierz.ch/cake186.php)
+
+In this article I will show how this network can be trained for tic-tac-toe, so that 1-ply search bot will become a perfect player, despite only searching 1 ply ahead instead of all possible states until the end of game.
+
+# N-Tuple Network for tic tac toe
+
+The goal of tic tac toe is to get 3 in row of own pieces - vertically, horizontally or diagonally. I think naturally the N-Tuple Network for such game should be the all eight possible row of 3. 3 horizontal rows, 3 vertical rows, 1 diagonal and 1 anti-diagonal. Each row then contains 27 (3\*\*3) possible states.
+
+(Image/Code)
+
+Each state of row can be encoded in LUT (lookup table) as index. In this case we have base3 system, empty being 0, X being 1 and O being 2.
+
+(Image/Code)
+
+This way each row has 27 possible states. But for the tic tac toe, to know which side is to move now is crucial. Either we can use 2 separate N-Tuple Network for side to move, or double the possible state for each row, which is effectively the same. I chose the latter.
+
+(Image/Code)
+
 
 
 
