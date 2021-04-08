@@ -1,4 +1,8 @@
-# Welcome!
+# N-Tuple Network
+
+N-Tuple Network is a set of patterns. Many board games can be split into various patterns, for example Othello and be splitted into 49 2x2 squares, each such square may hold one of 81 (3**4) possible states.
+
+
 
 This Basic template lets you get started quickly with a simple working example. If it is your first contribution then you should have a look at the [Getting Started](https://tech.io/doc/getting-started-create-playground) document.
 
