@@ -5,6 +5,7 @@ N-Tuple Neural Network is a set of patterns and each pattern contains some value
 Many board games can be splitted into various patterns, for example Othello can be splitted into 49 2x2 squares. Each such square may hold one of 81 possible states, because there are 4 small squares and each small square can be either empty, have black disc or white disc, so 3\*\*4 states hence 81. This N-Tuple Neural Network has 49 square patterns scattered across the board overlapping, each possible pattern holds some value and the prediction is done summing 49 values. Such network has 49 * 81 weights, so a total 3969 weights. N-Tuple Network is generally fast using lookup table. In this example, it can be done with 2d array, i.e. **float weights[49][3969]**.
 
 N-Tuple Neural Network is a function approximator and can be used as evaluation function in search-based bot. More on N-Tuples (mostly in reinforcement learning) are in:
+
 [`Learning to Play Othello
 with N-Tuple Systems`](https://www.semanticscholar.org/paper/Learning-to-Play-Othello-with-N-Tuple-Systems-Lucas/58fc891bd082eafabb78ebca42f35d3e1e494516)
 
